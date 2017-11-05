@@ -1,13 +1,13 @@
 import pytesseract
 import os
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image
 import re
 
-pytesseract.pytesseract.tesseract_cmd = '.....\\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '.....\\tesseract.exe' # path of tesseract
 
-path = 'C:.....' # path for the image folder
+path = 'C:.....' # path of image folder
 
-# function to convert image to text
+# function to convert image to text and return type: string
 def ocr(file_to_ocr):
     im = Image.open(path+"\\"+file_to_ocr)
     txt=pytesseract.image_to_string(im)
@@ -35,7 +35,7 @@ for file in file_list:
 	# selecting image file type
     if file.endswith(".jpg"): 
         txt=ocr(file) # calling the ocr function
-		# appending the text into the file
+	# appending the text into the file
         with open(directory+"\\"+'data'+".txt",'a+') as f:
             f.write("\n")
             f.write(file)
