@@ -16,7 +16,7 @@ def ocr(file_to_ocr):
 file_list = os.listdir(path) # file names in list (not sorted)
 directory = os.path.join(path) # path for storing the text file
 
-# function to sort the file names
+# function to sort the file names in order of numerical value present in it
 def atoi(text):
     return int(text) if text.isdigit() else text
 
